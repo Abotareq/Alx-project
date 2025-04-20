@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function TrainerCard() {
+export default function TrainerCard({ data }) {
   return (
     <div className="mx-auto mb-6 md:w-[320px] w-[260px] rounded-lg overflow-hidden shadow-lg bg-white relative">
       {/* Main image container */}
       <div className="relative w-full md:h-[304px] h-[244px]">
         <img
-          src="https://themecrafter.com/parezy/demo1/wp-content/uploads/sites/2/2020/06/team-05-600x600.jpg"
+          src={data.image}
           alt="Speech pathologist working with child"
           className="md:w-[304px] md:h-[304px] w-[244px] h-[244px] object-cover mx-auto"
         />
@@ -33,10 +33,26 @@ export default function TrainerCard() {
 
             <div className="absolute right-0 top-10 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {[
-                { bg: "bg-blue-400", hover: "hover:bg-blue-500", svgPath: /* your SVG path */ "" },
-                { bg: "bg-blue-500", hover: "hover:bg-blue-600", svgPath: /* ... */ "" },
-                { bg: "bg-blue-300", hover: "hover:bg-blue-400", svgPath: /* ... */ "" },
-                { bg: "bg-red-400", hover: "hover:bg-red-500", svgPath: /* ... */ "" },
+                {
+                  bg: "bg-blue-400",
+                  hover: "hover:bg-blue-500",
+                  svgPath: /* your SVG path */ "",
+                },
+                {
+                  bg: "bg-blue-500",
+                  hover: "hover:bg-blue-600",
+                  svgPath: /* ... */ "",
+                },
+                {
+                  bg: "bg-blue-300",
+                  hover: "hover:bg-blue-400",
+                  svgPath: /* ... */ "",
+                },
+                {
+                  bg: "bg-red-400",
+                  hover: "hover:bg-red-500",
+                  svgPath: /* ... */ "",
+                },
               ].map((style, i) => (
                 <div
                   key={i}
@@ -64,18 +80,15 @@ export default function TrainerCard() {
             preserveAspectRatio="none"
             className="w-full h-12"
           >
-            <path
-              d="M0,0 C150,40 350,0 500,20 L500,50 L0,50 Z"
-              fill="white"
-            />
+            <path d="M0,0 C150,40 350,0 500,20 L500,50 L0,50 Z" fill="white" />
           </svg>
         </div>
       </div>
 
       {/* Card content */}
       <div className="p-3">
-        <h2 className="text-xl font-bold text-indigo-900">Michael Jackson</h2>
-        <p className="text-gray-600 text-sm">Speech Pathologist</p>
+        <h2 className="text-xl font-bold text-indigo-900">{data.name}</h2>
+        <p className="text-gray-600 text-sm">{data.title}</p>
       </div>
     </div>
   );

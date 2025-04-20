@@ -1,16 +1,17 @@
 import React from "react";
 import Banner from "./components/Banner";
 import SpeechPathologyServices from "./components/SpeechPathologyServices";
-import TrainerCard from "../../components/TrainerCard";
-import TrainersSlider from "./components/TrainersSlider";
+import SliderTrainers from "./components/sliderTrainers";
+import BlogCard from "../../components/BlogCard";
+import Blogs from "./components/Blogs";
 
 export default function Home() {
   return (
     <>
       <Banner />
       <SpeechPathologyServices />
-      <TrainerCard />
-      <TrainersSlider />
+      <SliderTrainers />
+      <Blogs />
     </>
   );
 }
