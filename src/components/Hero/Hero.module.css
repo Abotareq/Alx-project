@@ -1,0 +1,80 @@
+.hero{
+    display: flex;
+    background-color: #fff3f0;
+    justify-content: space-between;
+}
+.sectionone{
+    max-width: 700px;
+  
+}
+.sectionone .image{
+    width: 100px;
+    height: 100px;
+    margin: 30px;
+    animation-name: ImageTransition;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    transform-origin: center;
+}
+
+
+@keyframes ImageTransition {
+    0% {
+        transform: translatex(0) translateY(0);
+    }
+    25% {
+        transform: translatex(-20px) translateY(-20px);
+    }
+    50% {
+        transform: translatex(0) translateY(0);
+    }
+    75% {
+        transform: translatex(-20px) translateY(-20px);
+    }
+    100% {
+        transform: translatex(0) translateY(0);
+    }
+}
+.visible{
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.8s ease-in-out;
+}
+.hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+.sectionone h1{
+    font-size: 40px;
+    color: #2d2c57;
+    margin-left: 20px;
+}
+.sectionone p{
+    color: #2d2c57;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.sectionone button{
+    background-color: #4ad0f8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+}
+.sectionone button:hover{
+    background-color: #fd6e94;
+    transition: all 0.8s ;
+}
+#first-image{
+    width: 600px;
+    height: 600px;
+    margin-top: 100px;
+    margin-right: 20px;
+}
