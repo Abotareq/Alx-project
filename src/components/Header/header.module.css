@@ -4,6 +4,7 @@
     align-items: center;
     background-color: #fff3f0;
     padding: 50px 30px;
+    width: 100%;
 }
 .logo a{
     text-decoration: none;
@@ -87,4 +88,67 @@ nav a{
     border-radius: 10px;
     border: none;
     cursor: pointer;
+    width: 100px;
+}
+/*Responsive design*/
+@media (max-width: 768px) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .logo a {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    .action {
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    .header {
+        display: flex;
+        justify-content: center;
+        padding: 20px 15px;
+    }
+
+    .logo a {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .iconbutton {
+        width: 35px;
+        height: 35px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
 }
