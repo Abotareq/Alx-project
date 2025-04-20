@@ -1,11 +1,12 @@
-import { useState } from "react";
-
+import Header from "./components/Header/Header"
+import Hero from "./components/Hero/Hero";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <h1 className="bg-slate-200 text-6xl">hello world</h1>
+    <Header />
+    <Hero />
     </>
   );
 }
