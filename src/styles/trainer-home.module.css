@@ -1,0 +1,28 @@
+/* CSS for the animated dotted border */
+.animatedDottedBorder {
+    position: absolute;
+    inset: 0;
+    border: 4px solid transparent; /* Transparent base for animation */
+    border-radius: 8px; /* Adjust as needed */
+    pointer-events: none;
+  }
+  
+  .animatedDottedBorder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 4px dotted gray;
+    border-radius: 8px; /* Match the border shape */
+    animation: move-dots 3s linear infinite;
+  }
+  
+  /* Keyframes to move dots along the border */
+  @keyframes move-dots {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
