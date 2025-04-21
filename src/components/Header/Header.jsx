@@ -1,4 +1,5 @@
 import styles from "./header.module.css"
+import { Link } from "react-router-dom";
 export default function Header(){
     return(
         <>
@@ -21,8 +22,8 @@ export default function Header(){
             <div className={styles.iconbutton}>
                 🔍
             </div>
-            <button className={styles.btn}>Login</button>
-            <button className={styles.btn}>Sign Up</button>
+            <Link to="/signin"><button className={styles.btn}>Login</button></Link>
+            <Link to="/signup"><button className={styles.btn}>Sign Up</button></Link>
         </div>
     </header>
         </>
