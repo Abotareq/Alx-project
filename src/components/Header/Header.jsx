@@ -8,7 +8,7 @@ export default function Header(){
                 <a href="/"><span>S</span><span>m</span><span>a</span><span>r</span><span>t</span><span>S</span><span>t</span><span>e</span><span>p</span></a>
                  </div>
         <nav className={styles.nav}>
-            <a href="#" class={styles.active}>Home</a>
+            <Link to="/"><a href="#" class={styles.active}>Home</a></Link>
             <div className={styles.tgs}>
             <a href="#">Pages</a>
             <a href="#">Our Services</a>
