@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 // Generate JWT Token
 const generateToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET || 'your-secret-key', {
+  return jwt.sign({ id: userId }, process.env.JWT_SECRET, {
     expiresIn: '30d'
   });
 };
@@ -13,10 +13,15 @@ exports.signup = async (req, res) => {
   try {
     const { username, email, password } = req.body;
 
+    // Validate input
+    if (!username || !email || !password) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+
     // Check if user already exists
     const existingUser = await User.findOne({ $or: [{ email }, { username }] });
     if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' });
+      return res.status(400).json({ error: 'User already exists' });
     }
 
     // Create new user
@@ -26,6 +31,7 @@ exports.signup = async (req, res) => {
       password
     });
 
+    // Save user to database
     await user.save();
 
     // Generate token
@@ -41,7 +47,11 @@ exports.signup = async (req, res) => {
       }
     });
   } catch (error) {
-    res.status(500).json({ message: 'Error creating user', error: error.message });
+    console.error('Signup error:', error);
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ error: error.message });
+    }
+    res.status(500).json({ error: 'Internal server error' });
   }
 };
 
@@ -50,16 +60,21 @@ exports.signin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    // Validate input
+    if (!email || !password) {
+      return res.status(400).json({ error: 'Email and password are required' });
+    }
+
     // Find user by email
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
 
     // Check password
     const isMatch = await user.comparePassword(password);
     if (!isMatch) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json({ error: 'Invalid credentials' });
     }
 
     // Generate token
@@ -75,6 +90,7 @@ exports.signin = async (req, res) => {
       }
     });
   } catch (error) {
-    res.status(500).json({ message: 'Error signing in', error: error.message });
+    console.error('Signin error:', error);
+    res.status(500).json({ error: 'Internal server error' });
   }
 }; 
