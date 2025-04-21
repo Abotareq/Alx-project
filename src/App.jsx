@@ -8,12 +8,14 @@ import Signup from "./components/SignUp/Signup";
 import Home from "./pages/Home/Home";
 import Footer from "./components/Footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LearningPage from "./pages/Home/LearningPage/LearningPage";
 
 function App() {
   return (
     <>
     <Router>
-      <Header />
+     {/*  <Header /> */}
+    <LearningPage />
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
