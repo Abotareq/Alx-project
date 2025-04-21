@@ -26,13 +26,13 @@ export default function Footer(){
                             <p>smrtstep@gmail.com</p>
                         </div>
                     </div>
-                    <div className={styles.phone}>
+                {/*     <div className={styles.phone}>
                         <a href="#" className={styles.facebook}><i class="fa-solid fa-location-dot"></i></a>
                         <div className={styles.info}>
                             <p>Our adress</p>
                             <p>25 El-tahrir street, Cairo</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
             <section className={styles.midsection}>
