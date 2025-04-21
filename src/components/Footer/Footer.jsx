@@ -7,9 +7,9 @@ export default function Footer(){
         <footer className={styles.footer}>
             <section className={styles.upper}>
                 <div className={styles.social}>
-                    <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="facebook"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#" class="facebook"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" className={styles.facebook}><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" className={styles.facebook}><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" className={styles.facebook}><i class="fa-brands fa-instagram"></i></a>
                 </div>
                 <div className={styles.contacts}>
                     <div className={styles.phone}>
@@ -20,7 +20,7 @@ export default function Footer(){
                         </div>
                     </div>
                     <div className={styles.phone}>
-                        <a href="#" class={styles.facebook}><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class={styles.facebook}><i class="fa-solid fa-envelope"></i></a>
                         <div className={styles.info}>
                             <p>Email Address</p>
                             <p>smrtstep@gmail.com</p>
