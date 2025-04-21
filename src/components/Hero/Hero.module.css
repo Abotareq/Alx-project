@@ -1,13 +1,19 @@
-.hero{
+.hero {
     display: flex;
     background-color: #fff3f0;
     justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.sectionone{
+
+.sectionone {
     max-width: 700px;
-  
+    flex: 1;
 }
-.sectionone .image{
+
+.sectionone .image {
     width: 100px;
     height: 100px;
     margin: 30px;
@@ -19,44 +25,39 @@
     transform-origin: center;
 }
 
-
 @keyframes ImageTransition {
-    0% {
-        transform: translatex(0) translateY(0);
+    0%, 50%, 100% {
+        transform: translateX(0) translateY(0);
     }
-    25% {
-        transform: translatex(-20px) translateY(-20px);
-    }
-    50% {
-        transform: translatex(0) translateY(0);
-    }
-    75% {
-        transform: translatex(-20px) translateY(-20px);
-    }
-    100% {
-        transform: translatex(0) translateY(0);
+    25%, 75% {
+        transform: translateX(-20px) translateY(-20px);
     }
 }
-.visible{
+
+.visible {
     opacity: 1;
     visibility: visible;
     transition: all 0.8s ease-in-out;
 }
-.hidden{
+
+.hidden {
     opacity: 0;
     visibility: hidden;
 }
-.sectionone h1{
+
+.sectionone h1 {
     font-size: 40px;
     color: #2d2c57;
     margin-left: 20px;
 }
-.sectionone p{
+
+.sectionone p {
     color: #2d2c57;
     margin-left: 20px;
     margin-top: 10px;
 }
-.sectionone button{
+
+.sectionone button {
     background-color: #4ad0f8;
     color: white;
     padding: 10px 20px;
@@ -68,13 +69,80 @@
     width: 150px;
     height: 50px;
 }
-.sectionone button:hover{
+
+.sectionone button:hover {
     background-color: #fd6e94;
-    transition: all 0.8s ;
+    transition: all 0.8s;
 }
-#first-image{
+
+#first-image {
     width: 600px;
     height: 600px;
     margin-top: 100px;
     margin-right: 20px;
+}
+
+/* ===============================
+    RESPONSIVE STYLES
+   =============================== */
+@media (max-width: 1024px) {
+    #first-image {
+        width: 400px;
+        height: 400px;
+        margin-top: 60px;
+    }
+
+    .sectionone h1 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .sectionone {
+        max-width: 100%;
+    }
+
+    .sectionone h1 {
+        font-size: 28px;
+        margin-left: 0;
+    }
+
+    .sectionone p,
+    .sectionone button {
+        margin-left: 0;
+    }
+
+    #first-image {
+        width: 300px;
+        height: 300px;
+        margin-top: 40px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sectionone h1 {
+        font-size: 24px;
+    }
+
+    .sectionone p {
+        font-size: 14px;
+    }
+
+    .sectionone button {
+        width: 130px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    #first-image {
+        width: 250px;
+        height: 250px;
+    }
 }
