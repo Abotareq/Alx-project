@@ -8,16 +8,10 @@ import Blogs from "./components/Blogs";
 export default function Home() {
   return (
     <>
-<<<<<<< HEAD
-      
-    </>
-  )
-=======
       <Banner />
       <SpeechPathologyServices />
       <SliderTrainers />
       <Blogs />
     </>
   );
->>>>>>> 7bac7a6a025a0dd6b18e755aeb4d73d28f1effb2
 }
