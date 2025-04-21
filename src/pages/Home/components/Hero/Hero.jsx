@@ -1,7 +1,7 @@
 import styles from "./Hero.module.css"
-import sumImages from "../../assets/sun-svgrepo-com.svg";
-import imageOne from "../../assets/s3-img.png"
-import imageTwo from "../../assets/s3-img1.png"
+import sumImages from "../../../../assets/sun-svgrepo-com.svg";
+import imageOne from "../../../../assets/s3-img.png"
+import imageTwo from "../../../../assets/s3-img1.png"
 import { useEffect, useState } from "react";
 
 export default function Hero(){

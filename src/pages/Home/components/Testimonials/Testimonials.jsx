@@ -1,7 +1,8 @@
 import styles from "./Testimonials.module.css";
-import image1 from "../../assets/images/image1.png";
-import image2 from "../../assets/images/image2.PNG";
-import image3 from "../../assets/images/image3.PNG";
+import image1 from "../../../../assets/images/image1.png";
+import image2 from "../../../../assets/images/image2.PNG";
+import image3 from "../../../../assets/images/image3.PNG";
+import HomeHeadings from "../../../../components/HomeHeadings";
 export default function Testimonials(){
     const Testimonials = [
         {
@@ -29,10 +30,7 @@ export default function Testimonials(){
     return(
         <>
             <main className={styles.testmonials}>
-                <section className={styles.data}>
-                    <p>Testimonials</p>
-                <h1>What Parents Say</h1>
-                </section>
+                <HomeHeadings title={"Testimonial"} subtitle={"what parent say"}/>
                 {Testimonials.map((item, index) => (
                     <section className={styles.div1} key={index}>
                     <img src={item.image} alt={`parent of ${item.name}`}/>
