@@ -1,0 +1,254 @@
+.footer{
+    background-color: #3d4eb4;
+    padding: 50px 30px;
+    
+}
+.upper{
+    margin: 50ox 30;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.social {
+    display: flex;
+    gap: 30px; /* adjust spacing between icons */
+    height: fit-content;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.facebook {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    color: rgb(93, 154, 207);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* icon size */
+    text-decoration: none;
+}
+.facebook:hover{
+    background-color: #fd6e94;
+    color: white;
+    transition: all 0.5s;
+}
+.contacts{
+    display: flex;
+    gap: 150px;
+    justify-content: space-between; 
+}
+.phone{
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    width: 250px;
+}
+.info{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    gap: 10px;
+    color: white;
+}
+.midsection{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 30px;
+}
+.about, .blogs{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    gap: 20px;
+}
+.about h1{
+    padding: 10px 0 0 10px;
+    color: white;
+}
+.about p{
+    padding:10px 10px;
+    color: white;
+}
+.btn{
+    background-color: #fd6e94;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 150px;
+    height: 50px;
+}
+.btn:hover{
+    background-color: #4ad0f8;
+    transition: all 0.8s ;
+}
+.usefullinks{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    color: white;
+    gap: 20px;
+}
+.usefullinks nav{
+    display: flex;
+    gap: 20px;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.column a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.column a:hover{
+    color: #fd6e94;
+    transition: all 0.5s;
+}
+.blogs h1{
+    color: white;
+}
+.blogdata{
+    display: flex;
+}
+.bloginfo{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.bloginfo a{
+    color: white;
+    text-decoration: none;
+}
+.bloginfo a:hover{
+    color:#fd6e94;
+    transition: all 0.8s;
+}
+.bloginfo p{
+    color:#fd6e94;
+}
+.lower{
+    display: flex;
+    justify-content: space-between;
+}
+.right{
+    display: flex;
+    padding: 0 20px;
+    gap: 10px;
+}
+.right a{
+    text-decoration: none;
+    color: white;
+}
+.right a:hover{
+    color: #fd6e94;
+    transition: all 0.5s ;
+}
+.left{
+    color: white;
+    cursor: pointer;
+}
+.left:hover{
+    color: #fd6e94;
+    transition: all 0.5s ease-in-out; 
+}
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+    .upper {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .contacts {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .midsection {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .about, .blogs, .usefullinks {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .usefullinks nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .lower {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .right {
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .right a {
+        padding: 5px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 600px) {
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .facebook {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .btn {
+        width: 130px;
+        height: 45px;
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .phone {
+        width: auto;
+        padding-left: 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .info {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .blogdata {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bloginfo {
+        text-align: center;
+    }
+}
