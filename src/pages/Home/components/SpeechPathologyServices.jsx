@@ -1,5 +1,6 @@
 import React from "react";
-
+import HomeHeadings from "../../../components/HomeHeadings";
+HomeHeadings
 export default function SpeechPathologyServices() {
   return (
     <div className="pt-20">
@@ -8,12 +9,10 @@ export default function SpeechPathologyServices() {
         <div className="flex flex-col md:flex-row md:gap-8">
           {/* Left side - Header Section */}
           <div className="md:w-1/3 mb-8 md:mb-0">
-            <p className="text-pink-500 uppercase font-medium mb-2">
-              WHAT WE DO
-            </p>
-            <h1 className="text-3xl md:text-4xl font-bold text-indigo-900 mb-4">
-              Expert Pathologists for Communication Success
-            </h1>
+            <HomeHeadings
+              title={"Expert Pathologists for Communication Success"}
+              subtitle={"WHAT WE DO"}
+            />
             <p className="text-gray-600 mb-6">
               Speech-language pathology is the study of speech and language such
               as developmental articulation disorder Dysphasia.
