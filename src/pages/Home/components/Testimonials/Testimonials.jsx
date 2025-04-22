@@ -30,7 +30,10 @@ export default function Testimonials(){
     return(
         <>
             <main className={styles.testmonials}>
-                <HomeHeadings title={"Testimonial"} subtitle={"what parent say"}/>
+            <section className={styles.data}>
+                <p>Testimonials</p>
+                <h1>What Parents Say</h1>
+        </section>
                 {Testimonials.map((item, index) => (
                     <section className={styles.div1} key={index}>
                     <img src={item.image} alt={`parent of ${item.name}`}/>

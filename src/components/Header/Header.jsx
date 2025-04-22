@@ -5,17 +5,19 @@ export default function Header(){
         <>
             <header className={styles.header}>
                 <div className={styles.logo}>
-                <a href="/"><span>S</span><span>m</span><span>a</span><span>r</span><span>t</span><span>S</span><span>t</span><span>e</span><span>p</span></a>
+                <Link to="/">
+                    <span>S</span><span>m</span><span>a</span><span>r</span><span>t</span><span>S</span><span>t</span><span>e</span><span>p</span>
+                </Link>
                  </div>
         <nav className={styles.nav}>
-            <Link to="/"><a href="#" class={styles.active}>Home</a></Link>
+            
             <div className={styles.tgs}>
-            <a href="#">Pages</a>
-            <a href="#">Our Services</a>
-            <a href="#">Projects</a>
-            <a href="#">Shop</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact Us</a>
+            <Link to="/"><a href="#" class={styles.active}>Home</a></Link>
+            <Link to="#">Our Services</Link>
+            <Link to="#">Projects</Link>
+            <Link to="#">Shop</Link>
+            <Link to="/blog"><button className={styles.tgs}>Blog</button></Link>
+            <Link to="#">ContactUs</Link>
         </div>
         </nav>
         <div className={styles.action}>

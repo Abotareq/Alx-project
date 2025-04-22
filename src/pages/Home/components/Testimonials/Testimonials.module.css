@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 .data{
     display: flex;
@@ -23,6 +24,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: space-between; */
     margin: 0 30px;
 }
 .div1btn{
@@ -49,10 +51,53 @@
     padding: 8px 20px;
     border-radius: 10px;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 450px){
     .testmonials{
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
+    }
+    .data{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .div1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .footer{
+        display: flex;
+        width: 100%;
+    }
+    .upper{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 768px){
+    .testmonials{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .data{
+        display: flex;
+        justify-content: center;
+    }
+    .div1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 30px;
+        padding: 0 3.5rem;
     }
 }

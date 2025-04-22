@@ -42,19 +42,18 @@
     align-items: center;
 }
 nav a{
-    margin: 0 20px;
+    /* margin: 0 20px; */
     text-decoration: none;
     color: #2d2c57;
     font-size: 16px;
 }
 .tgs a{
-    padding: 8px 20px;
+    padding: 8px;
 
 }
 .tgs a:hover{
     color: white;
     background-color: #fd6e94;
-    padding: 8px 20px;
     border-radius: 10px;
     transition: all 0.5s;
 }
@@ -91,64 +90,72 @@ nav a{
     width: 100px;
 }
 /*Responsive design*/
-@media (max-width: 768px) {
+@media screen and (max-width: 450px) {
     .header{
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-    }
-    .logo a {
-        font-size: 20px;
-        margin-bottom: 10px;
-    }
-
-    .nav {
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
-        margin-top: 10px;
+        background-color: #fff3f0;
+        gap: 20px;
+        height: 100%;
+    }
+    .logo{
+        width: 100%;
+        text-align: center;
+    }
+    nav{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 20px;
+    }
+    .tgs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
+    .tgs a,
     nav a {
-        margin: 10px 0;
-        font-size: 14px;
+        width: 90%;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .active {
+        color: white;
+        background-color: #fd6e94;
     }
 
     .action {
-        flex-direction: row;
-        justify-content: flex-start;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .btn {
-        padding: 8px 15px;
-        font-size: 14px;
+        flex-direction: column;
+        gap: 10px;
     }
 }
-@media (max-width: 480px) {
-    .header {
+@media screen and (max-width: 768px) {
+    .header{
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        padding: 20px 15px;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 30px 10px;
+        gap: 20px;
     }
-
-    .logo a {
-        font-size: 18px;
+}
+@media (min-width: 768px) {
+    .nav{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .btn {
-        padding: 8px 12px;
-        font-size: 13px;
-    }
-
-    .iconbutton {
-        width: 35px;
-        height: 35px;
-    }
-
-    nav a {
-        font-size: 13px;
+    .tgs{
+        padding: 0;
     }
 }
