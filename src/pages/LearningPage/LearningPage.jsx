@@ -12,7 +12,7 @@ export default function LearningPage() {
     main();
   };
   const ai = new GoogleGenAI({
-    apiKey: "AIzaSyB8mC2w0GQvHVgbP4vYwnzG8PkaO-TBteY",
+    apiKey: "AIzaSyDoKPvvZTzORNW3iH7ie5YwZrsgkfX8yuE",
   });
 
   async function main() {
