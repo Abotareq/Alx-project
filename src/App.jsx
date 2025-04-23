@@ -6,35 +6,24 @@ import "./App.css";
 import SignIn from "./components/SignIn/SignIn";
 import Signup from "./components/SignUp/Signup";
 import Home from "./pages/Home/Home";
-
 import Footer from "./components/Footer/Footer";
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import BlogSection from "./pages/blog/BlogSection";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LearningPage from "./pages/LearningPage/LearningPage";
-import ImageAi from "./pages/imageGeneration/ImageAi";
-
+import BlogSection from "./pages/blog/BlogSection";
+// import LearningPage from "./pages/LearningPage/LearningPage";
+// import ImageAi from "./pages/imageGeneration/ImageAi";
 
 function App() {
   return (
     <>
-    <Router>
-      <Header />
-      <Routes>
-          <Route path="/blog" element={<BlogSection />} />
-          <Route path="/" element={<Home />} />
-
       <Router>
         <Header />
 
-        <LearningPage />
+        {/* <LearningPage /> */}
         <Routes>
-          {/*      <Route path="/" element={<Home />} /> */}
-
+          <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/blog" element={<BlogSection />} />
         </Routes>
         <Footer />
       </Router>
