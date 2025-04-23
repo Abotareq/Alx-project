@@ -18,7 +18,7 @@ function SignIn() {
   });
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen py-10 flex items-center justify-center px-4">
     <div className="bg-white p-8 md:p-14 rounded-2xl w-full max-w-2xl shadow-lg">
       <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Sign In</h2>
       <p className="text-gray-500 mb-10 text-center">Please enter your login details below.</p>
