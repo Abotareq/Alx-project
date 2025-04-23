@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { GoogleGenAI } from "@google/genai";
+import { useContext } from "react";
+import { VoiceContext } from "../../context/voiceContext";
 export default function LearningPage() {
+  let { responseText, setResponseText } = useContext(VoiceContext);
   const [inputValue, setInputValue] = useState("");
-  const [responsetext, setResponse] = useState("");
+  const [response_text, setResponse] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +21,7 @@ export default function LearningPage() {
   async function main() {
     const response = await ai.models.generateContent({
       model: "gemini-2.0-flash",
-      contents: [{ text: inputValue }],
+      contents: [{ text: responseText }],
     });
     setResponse(response.text);
     console.log(response.text);
@@ -43,7 +46,7 @@ export default function LearningPage() {
       </form>
 
       <textarea
-        value={responsetext}
+        value={response_text}
         readOnly
         rows={5}
         placeholder="API response will appear here..."
