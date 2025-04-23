@@ -4,9 +4,9 @@
     
 }
 .upper{
-    margin: 50ox 30;
+    margin: 50ox 30px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     gap: 100px;
 }
 .social {
@@ -18,7 +18,7 @@
     padding-left: 30px;
 }
 
-.facebook {
+.icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -30,7 +30,7 @@
     font-size: 20px; /* icon size */
     text-decoration: none;
 }
-.facebook:hover{
+.icon:hover{
     background-color: #fd6e94;
     color: white;
     transition: all 0.5s;
@@ -164,7 +164,7 @@
     transition: all 0.5s ease-in-out; 
 }
 /* Responsive - Tablet */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .upper {
         flex-direction: column;
         align-items: center;
@@ -213,7 +213,7 @@
 }
 
 /* Responsive - Mobile */
-@media (max-width: 600px) {
+@media (max-width: 450px) {
     .footer {
         padding: 30px 15px;
     }

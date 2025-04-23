@@ -102,42 +102,31 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 20px;
     }
 
-    .section-one {
+    .sectionone {
         max-width: 100%;
-        padding: 10px;
     }
 
-    .section-one .image {
-        margin: 20px auto;
-    }
-
-    .section-one h1 {
+    .sectionone h1 {
         font-size: 28px;
         margin-left: 0;
     }
 
-    .section-one p {
-        font-size: 16px;
+    .sectionone p,
+    .sectionone button {
         margin-left: 0;
     }
 
-    .section-one button {
-        margin: 20px auto;
-        display: block;
-    }
-
     #first-image {
-        width: 90%;
-        height: auto;
-        margin: 30px 0;
+        width: 300px;
+        height: 300px;
+        margin-top: 40px;
+        margin-right: 0;
     }
-
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .sectionone h1 {
         font-size: 24px;
     }
@@ -145,62 +134,15 @@
     .sectionone p {
         font-size: 14px;
     }
+
     .sectionone button {
         width: 130px;
         height: 45px;
         font-size: 14px;
     }
-    .hero{
-        display: flex;
-        flex-direction: column;
-    }
-    .section-one .image{
-        text-align: center;
-        justify-content: center;
-    }
-    #first-image{
-        width: 250px;
-        height: 250px;
-        align-items: center;
-        justify-content: center;
-    }
-
-}
-@media screen and (min-width: 780px){
-    .hero {
-        flex-direction: row;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .section-one {
-        max-width: 100%;
-        padding: 10px;
-    }
-
-    .section-one .image {
-        margin: 20px auto;
-    }
-
-    .section-one h1 {
-        font-size: 28px;
-        margin-left: 0;
-    }
-
-    .section-one p {
-        font-size: 16px;
-        margin-left: 0;
-    }
-
-    .section-one button {
-        margin: 20px auto;
-        display: block;
-    }
 
     #first-image {
-        width: 90%;
-        height: auto;
-        margin: 30px 0;
+        width: 250px;
+        height: 250px;
     }
 }

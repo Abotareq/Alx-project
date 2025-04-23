@@ -5,7 +5,6 @@
   background-color: #fff3f0;
   padding: 30px 30px;
   width: 100%;
-  position: sticky;
   top: 0;
   z-index: 1000;
 }
@@ -73,32 +72,6 @@ nav a {
   gap: 15px;
 }
 
-.logo a span:nth-child(6){
-    color: #4ad0f8;
-}
-.logo a span:nth-child(7){
-    color: #fdd36e;
-}
-.logo a span:nth-child(8){
-    color: #fd6e94
-}
-.logo a span:nth-child(9){
-    color: #4a7cf8;
-}
-.nav{
-    display: flex;
-    align-items: center;
-}
-nav a{
-    /* margin: 0 20px; */
-    text-decoration: none;
-    color: #2d2c57;
-    font-size: 16px;
-}
-.tgs a{
-    padding: 8px;
-
-
 .iconbutton {
   background-color: #fdd9d9;
   border-radius: 50%;
@@ -118,164 +91,59 @@ nav a{
   cursor: pointer;
   width: 100px;
 }
-
-.tgs a:hover{
-    color: white;
-    background-color: #fd6e94;
-    border-radius: 10px;
-    transition: all 0.5s;
+@media screen and (max-width: 450px){
+  .header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background-color: #fff3f0;
+    gap: 20px;
+    height: 100%;
 }
-.active{
-    color: white;
-    background-color: #fd6e94;
-    padding: 8px 20px;
-    border-radius: 10px;
+.logo{
+    width: 100%;
+    text-align: center;
 }
-.action{
-
-/*Responsive design*/
-@media (max-width: 768px) {
-  .header {
-
+nav{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+.tgs {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    align-items: center;
-    cursor: pointer;
+    width: 100%;
 }
-.btn{
-    background-color: #3d4eb4;
-    color: white;
-    padding: 10px 20px;
+
+.tgs a,
+nav a {
+    width: 90%;
+    text-align: center;
+    padding: 10px;
     border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    width: 100px;
 }
-/*Responsive design*/
-@media screen and (max-width: 450px) {
-    .header{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background-color: #fff3f0;
-        gap: 20px;
-        height: 100%;
-    }
-    .logo{
-        width: 100%;
-        text-align: center;
-    }
-    nav{
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 20px;
-    }
-    .tgs {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
 
-    .tgs a,
-    nav a {
-        width: 90%;
-        text-align: center;
-        padding: 10px;
-        border-radius: 10px;
-    }
+.active {
+    color: white;
+    background-color: #fd6e94;
+}
 
-    .active {
-        color: white;
-        background-color: #fd6e94;
-    }
-
-    .action {
-        flex-direction: column;
-        gap: 10px;
-    }
+.action {
+    flex-direction: column;
+    gap: 10px;
+}
 }
 @media screen and (max-width: 768px) {
-    .header{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 30px 10px;
-        gap: 20px;
-    }
-}
-@media (min-width: 768px) {
-    .nav{
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .tgs{
-        padding: 0;
-    }
-}
+  .header{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 10px;
+      gap: 20px;
   }
-  .logo a {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  nav a {
-    margin: 10px 0;
-    font-size: 14px;
-  }
-
-  .action {
-    flex-direction: row;
-    justify-content: flex-start;
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .btn {
-    padding: 8px 15px;
-    font-size: 14px;
-  }
-}
-@media (max-width: 480px) {
-  .header {
-    display: flex;
-    justify-content: center;
-    padding: 20px 15px;
-  }
-
-  .logo a {
-    font-size: 18px;
-  }
-
-  .btn {
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-
-  .iconbutton {
-    width: 35px;
-    height: 35px;
-  }
-
-  nav a {
-    font-size: 13px;
-  }
+  
 }
