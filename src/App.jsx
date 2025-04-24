@@ -20,14 +20,14 @@ function App() {
       <VoiceProvider>
         <Router>
           <Header />
-          <VoiceInput />
-          <LearningPage />
-          {/*         <Routes>
+          {/* <VoiceInput />
+          <LearningPage /> */}
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/blog" element={<BlogSection />} />
-        </Routes> */}
+        </Routes>
           <Footer />
         </Router>
       </VoiceProvider>

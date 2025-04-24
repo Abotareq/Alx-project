@@ -1,21 +1,23 @@
 .footer{
     background-color: #3d4eb4;
     padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
     
 }
 .upper{
-    margin: 50ox 30px;
+    margin: 50ox 100px;
     display: flex;
-    justify-content: space-around;
-    gap: 100px;
+    justify-content: space-between;
+    gap: 30px;
 }
 .social {
     display: flex;
-    gap: 30px; /* adjust spacing between icons */
+    gap: 30px; 
     height: fit-content;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 30px;
+    /* padding-left: 2.5rem; */
 }
 
 .icon {
@@ -41,7 +43,6 @@
     justify-content: space-between; 
 }
 .phone{
-    padding-left: 20px;
     display: flex;
     align-items: center;
     width: 250px;
@@ -69,6 +70,8 @@
 .about h1{
     padding: 10px 0 0 10px;
     color: white;
+    font-size: 20px;
+
 }
 .about p{
     padding:10px 10px;
@@ -96,6 +99,9 @@
     max-width: 300px;
     color: white;
     gap: 20px;
+}
+.usefullinks h1{
+    padding-left: 1rem;
 }
 .usefullinks nav{
     display: flex;
@@ -163,6 +169,11 @@
     color: #fd6e94;
     transition: all 0.5s ease-in-out; 
 }
+h1{
+    font-size: 20px;
+    font-weight: bold;
+}
+
 /* Responsive - Tablet */
 @media (max-width: 768px) {
     .upper {
@@ -172,9 +183,11 @@
     }
 
     .contacts {
+        /* background-color: red; */
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        margin-left: 2rem;
+        /* gap: 30px; */
     }
 
     .midsection {
@@ -182,7 +195,10 @@
         align-items: center;
         gap: 40px;
     }
-
+    .about button{
+        margin-left: 14.5rem;
+        
+    }
     .about, .blogs, .usefullinks {
         max-width: 100%;
         text-align: center;
@@ -223,11 +239,23 @@
         height: 40px;
         font-size: 18px;
     }
-
+    .midsection{
+        
+        display: flex;
+        justify-content: center;
+    }
+    .about{
+        display: flex;
+        justify-content: center;
+    }
+    .about button{
+        margin-left: 5rem;
+    }
     .btn {
+        text-align: center;
         width: 130px;
         height: 45px;
-        padding: 8px 16px;
+        padding: 8px;
         font-size: 14px;
     }
 
@@ -237,7 +265,9 @@
         justify-content: center;
         text-align: center;
     }
-
+    .contacts .phone .icon{
+        margin-right: 1.2rem;
+    }
     .info {
         padding-left: 0;
         align-items: center;

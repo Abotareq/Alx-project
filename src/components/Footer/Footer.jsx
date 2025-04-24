@@ -29,7 +29,8 @@ export default function Footer() {
               <p>+20 115 688 9741</p>
             </div>
           </div>
-
+        </div>
+        <div className={styles.contacts}>
           <div className={styles.phone}>
             <a href="#" className={styles.icon}>
               <i className="fa-solid fa-envelope"></i>
@@ -39,10 +40,10 @@ export default function Footer() {
               <p>smartstep@gmail.com</p>
             </div>
           </div>
-
+          </div>
           {/* Uncomment when you have a location */}
-          {/* 
-          <div className={styles.phone}>
+          
+          {/* <div className={styles.phone}>
             <a href="#" className={styles.icon}>
               <i className="fa-solid fa-location-dot"></i>
             </a>
@@ -50,15 +51,14 @@ export default function Footer() {
               <p>Our Address</p>
               <p>25 El-Tahrir Street, Cairo</p>
             </div>
-          </div> 
-          */}
-        </div>
+          </div>  */}
+         
       </section>
 
       {/* Mid Section */}
       <section className={styles.midsection}>
         <div className={styles.about}>
-          <h1>About Us</h1>
+          <h1 >About Us</h1>
           <p>
             In Smart Step, we believe that every child shines — and children
             with Down syndrome light up the world with love and joy.

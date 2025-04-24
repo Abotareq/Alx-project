@@ -1,8 +1,8 @@
 import React from "react";
 import { Calendar, MessageSquare } from "lucide-react";
 import { Card } from "../../components/ui/card";
-import image1 from "../../assets/blog/blog2.jpg"
-import image2 from "../../assets/blog/blog1.jpg"
+import image1 from "../../assets/blog/blog1.jpg"
+import image2 from "../../assets/blog/blog2.jpg"
 import image3 from "../../assets/blog/blog3.jpg"
 
 const blogs = [
