@@ -18,22 +18,22 @@
     width: 100px;
     height: 100px;
     margin: 30px;
-    /* animation-name: ImageTransition;
+    animation-name: ImageTransition;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     position: relative;
-    transform-origin: center; */
+    transform-origin: center;
 }
 
-/* @keyframes ImageTransition {
+@keyframes ImageTransition {
     0%, 50%, 100% {
         transform: translateX(0) translateY(0);
     }
     25%, 75% {
         transform: translateX(-20px) translateY(-20px);
     }
-} */
+}
 
 .visible {
     opacity: 1;

@@ -1,6 +1,6 @@
 import React from "react";
 import HomeHeadings from "../../../components/HomeHeadings";
-HomeHeadings
+HomeHeadings;
 export default function SpeechPathologyServices() {
   return (
     <div className="pt-20">
@@ -38,9 +38,9 @@ export default function SpeechPathologyServices() {
               </div>
             </div>
 
-            <button className="bg-blue-400 text-white px-6 py-3 rounded-md hover:bg-blue-500 transition-colors">
+            {/* <button className="bg-blue-400 text-white px-6 py-3 rounded-md hover:bg-blue-500 transition-colors">
               About Us
-            </button>
+            </button> */}
           </div>
 
           {/* Right side - Services Grid */}
@@ -144,24 +144,7 @@ export default function SpeechPathologyServices() {
         </div>
 
         {/* Scroll to top button */}
-        <div className="fixed bottom-4 right-4">
-          <button className="bg-pink-500 text-white rounded-full p-3 shadow-lg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 15l7-7 7 7"
-              />
-            </svg>
-          </button>
-        </div>
+        <div className="fixed bottom-4 right-4"></div>
       </div>
     </div>
   );

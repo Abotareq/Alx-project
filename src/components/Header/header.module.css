@@ -11,7 +11,6 @@
 .logo a {
   text-decoration: none;
   font-size: 25px;
-  
 }
 .logo span:nth-child(1),
 .logo span:nth-child(9) {
@@ -45,7 +44,6 @@
 .logo a span:nth-child(12) {
   color: #4ad0f8;
 }
-
 
 .nav {
   display: flex;
@@ -89,6 +87,7 @@ nav a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  overflow: hidden;
 }
 .btn {
   background-color: #3d4eb4;
@@ -99,8 +98,8 @@ nav a {
   cursor: pointer;
   width: 100px;
 }
-@media screen and (max-width: 450px){
-  .header{
+@media screen and (max-width: 450px) {
+  .header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -108,50 +107,49 @@ nav a {
     background-color: #fff3f0;
     gap: 20px;
     height: 100%;
-}
-.logo{
+  }
+  .logo {
     width: 100%;
     text-align: center;
-}
-nav{
+  }
+  nav {
     flex-direction: column;
     align-items: center;
     width: 100%;
     gap: 20px;
-}
-.tgs {
+  }
+  .tgs {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-}
+  }
 
-.tgs a,
-nav a {
+  .tgs a,
+  nav a {
     width: 90%;
     text-align: center;
     padding: 10px;
     border-radius: 10px;
-}
+  }
 
-.active {
+  .active {
     color: white;
     background-color: #fd6e94;
-}
+  }
 
-.action {
+  .action {
     flex-direction: column;
     gap: 10px;
-}
+  }
 }
 @media screen and (max-width: 768px) {
-  .header{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 10px;
-      gap: 20px;
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 10px;
+    gap: 20px;
   }
-  
 }

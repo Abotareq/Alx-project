@@ -42,7 +42,7 @@ export default function Hero() {
             A supportive space for children with Down syndrome and their
             families to grow, connect, and thrive.
           </p>
-          <button>About Us</button>
+         {/*  <button>About Us</button> */}
         </div>
       </section>
 
