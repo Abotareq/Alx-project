@@ -9,7 +9,10 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Your frontend URL
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
@@ -73,6 +76,12 @@ mongoose.connect(mongoURI, options)
     console.error('MongoDB connection failed:', err);
     process.exit(1);
   });
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: 'Something went wrong!', error: err.message });
+});
 
 // Server
 const PORT = process.env.PORT || 5000;

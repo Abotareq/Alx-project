@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { useAuth } from '../../context/AuthContext';
+import api from '../../config/api';
 
-const SignIn = () => {
+export default function SignIn() {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setFormData({
@@ -19,31 +22,34 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Clear any previous errors
-    try {
-      const response = await axios.post('http://localhost:5000/api/auth/signin', formData);
-      
-      // Store user data and token
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      localStorage.setItem('token', response.data.token);
+    setError('');
+    setLoading(true);
 
-      if (response.data.user.isAdmin) {
-        // Redirect admin users to the admin dashboard
-        navigate('/admin/dashboard');
-      } else {
-        // Redirect regular users to the home page
-        navigate('/');
+    try {
+      const response = await api.post('/auth/signin', {
+        email: formData.email,
+        password: formData.password
+      });
+
+      if (response.data.token) {
+        // Store the token in localStorage
+        localStorage.setItem('token', response.data.token);
+        
+        // Login the user and redirect to learning page
+        login(response.data.user);
+        navigate('/learning');
       }
     } catch (err) {
-      // Show the specific error message from the server
-      setError(err.response?.data?.message || 'An error occurred during sign in');
-      console.error('Sign in error:', err.response?.data || err);
+      console.error('Sign in error:', err);
+      setError(err.response?.data?.message || 'Invalid email or password');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-xl shadow-lg">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account
@@ -51,17 +57,11 @@ const SignIn = () => {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-              <span className="block sm:inline">{error}</span>
-            </div>
+            <div className="text-red-500 text-center">{error}</div>
           )}
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
-              <label htmlFor="email" className="sr-only">
-                Email address
-              </label>
               <input
-                id="email"
                 name="email"
                 type="email"
                 required
@@ -72,11 +72,7 @@ const SignIn = () => {
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
               <input
-                id="password"
                 name="password"
                 type="password"
                 required
@@ -91,15 +87,16 @@ const SignIn = () => {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              disabled={loading}
+              className={`group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+                loading ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
             >
-              Sign in
+              {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </div>
         </form>
       </div>
     </div>
   );
-};
-
-export default SignIn;
+}

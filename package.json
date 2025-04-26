@@ -18,6 +18,7 @@
     "@types/node": "^22.15.2",
     "@types/react-chartjs-2": "^2.0.2",
     "axios": "^1.8.4",
+    "bcryptjs": "^3.0.2",
     "buffer": "^6.0.3",
     "chart.js": "^4.4.9",
     "cloudinary": "^2.6.0",

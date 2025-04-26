@@ -1,11 +1,11 @@
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Header() {
-  const user = JSON.parse(localStorage.getItem("user") || "{}");
-  console.log(user)
-  const admin = (user.isAdmin)
-  console.log(admin)
+  const { user, logout } = useAuth();
+  const admin = user?.isAdmin;
+
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -42,13 +42,23 @@ export default function Header() {
       <div className={styles.action}>
         <div className={styles.iconbutton}>🔍</div>
 
-        <Link to="/signin">
-          <button className={styles.btn}>Login</button>
-        </Link>
-
-        <Link to="/signup">
-          <button className={styles.btn}>Sign Up</button>
-        </Link>
+        {user ? (
+          <>
+            <span className={styles.username}>{user.username}</span>
+            <button className={styles.btn} onClick={logout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/signin">
+              <button className={styles.btn}>Login</button>
+            </Link>
+            <Link to="/signup">
+              <button className={styles.btn}>Sign Up</button>
+            </Link>
+          </>
+        )}
       </div>
     </header>
   );

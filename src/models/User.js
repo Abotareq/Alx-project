@@ -1,13 +1,10 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-  username: {
+  name: {
     type: String,
     required: true,
-    unique: true,
-    trim: true,
-    minlength: 3
+    trim: true
   },
   email: {
     type: String,
@@ -19,11 +16,49 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 8
+    minlength: 6
   },
   isAdmin: {
     type: Boolean,
     default: false
+  },
+  // Parent info
+  phone: {
+    type: String,
+    trim: true
+  },
+  dob: {
+    type: Date
+  },
+  gender: {
+    type: String,
+    enum: ['male', 'female', 'other']
+  },
+  address: {
+    type: String,
+    trim: true
+  },
+  // Handicapped info
+  handicappedInfo: {
+    firstName: {
+      type: String,
+      trim: true
+    },
+    lastName: {
+      type: String,
+      trim: true
+    },
+    dob: {
+      type: Date
+    },
+    gender: {
+      type: String,
+      enum: ['male', 'female', 'other']
+    },
+    type: {
+      type: String,
+      enum: ['visual', 'hearing', 'mobility', 'cognitive']
+    }
   },
   createdAt: {
     type: Date,
@@ -49,4 +84,6 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
   return bcrypt.compare(candidatePassword, this.password);
 };
 
-module.exports = mongoose.model('User', userSchema); 
+const User = mongoose.models.User || mongoose.model('User', userSchema);
+
+export default User; 

@@ -45,7 +45,7 @@ exports.adminLogin = async (req, res) => {
 // Signup Controller
 exports.signup = async (req, res) => {
   try {
-    const { username, email } = req.body;
+    const { username, email, password } = req.body;
     console.log('Signup attempt for email:', email);
 
     // Check if user already exists
@@ -59,7 +59,7 @@ exports.signup = async (req, res) => {
     const user = new User({
       username,
       email,
-      // password: 'admin',
+      password,
       isAdmin: false
     });
 
@@ -67,9 +67,7 @@ exports.signup = async (req, res) => {
     console.log('User created successfully:', email);
 
     // Generate token
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || 'your-secret-key', {
-      expiresIn: '30d'
-    });
+    const token = generateToken(user._id);
 
     res.status(201).json({
       message: 'User created successfully',
@@ -103,7 +101,7 @@ exports.signin = async (req, res) => {
     }
 
     // Check password
-    const isMatch = password === 'admin';
+    const isMatch = await user.comparePassword(password);
     console.log('Password match:', isMatch);
     
     if (!isMatch) {
@@ -112,9 +110,7 @@ exports.signin = async (req, res) => {
     }
 
     // Generate token
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || 'your-secret-key', {
-      expiresIn: '30d'
-    });
+    const token = generateToken(user._id);
 
     res.json({
       message: 'Login successful',
