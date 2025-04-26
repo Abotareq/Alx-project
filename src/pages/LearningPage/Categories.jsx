@@ -2,7 +2,8 @@ import React from "react";
 import CategorySideCard from "../../components/CategorySideCard";
 import { catagories } from "../../constants";
 import { catagoriesImages } from "../../constants";
-export default function Catagories() {
+
+export default function Categories() {
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
@@ -19,4 +20,4 @@ export default function Catagories() {
       </div>
     </>
   );
-}
+} 

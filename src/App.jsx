@@ -13,6 +13,7 @@ import BlogSection from "./pages/blog/BlogSection";
 import VoiceInput from "./components/VoiceInput";
 import { VoiceProvider } from "./context/voiceContext";
 import LearningPage from "./pages/LearningPage/LearningPage";
+import Categories from "./pages/LearningPage/Categories";
 // import ImageAi from "./pages/imageGeneration/ImageAi";
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/blog" element={<BlogSection />} />
+          <Route path="/learning" element={<Categories />} />
+          <Route path="/learningPage/:title" element={<LearningPage />} />
         </Routes>
           <Footer />
         </Router>

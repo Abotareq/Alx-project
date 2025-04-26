@@ -103,20 +103,26 @@ export default function LearningPage() {
         });
         audioChunksRef.current = [];
 
-        let voiceToText = await client.speechToText.convert({
-          model_id: "scribe_v1",
-          file: audioBlob,
-          language_code: "eng",
-          audio_format: "mp3",
-        });
+        try {
+          let voiceToText = await client.speechToText.convert({
+            model_id: "scribe_v1",
+            file: audioBlob,
+            language_code: "eng",
+            audio_format: "mp3",
+          });
 
-        setResponseText(voiceToText.text);
+          setResponseText(voiceToText.text);
+        } catch (error) {
+          console.error("Speech to text conversion error:", error);
+          setResponseText("Error converting speech to text. Please try again.");
+        }
       };
 
       mediaRecorderRef.current.start();
       setIsRecording(true);
     } catch (error) {
       console.error("Microphone access error:", error);
+      setResponseText("Error accessing microphone. Please ensure microphone permissions are granted.");
     }
   };
 
