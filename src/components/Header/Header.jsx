@@ -1,5 +1,7 @@
 import styles from "./header.module.css";
 import { Link } from "react-router-dom";
+import React from "react";
+
 
 export default function Header() {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
@@ -40,8 +42,6 @@ export default function Header() {
       </nav>
 
       <div className={styles.action}>
-        <div className={styles.iconbutton}>🔍</div>
-
         <Link to="/signin">
           <button className={styles.btn}>Login</button>
         </Link>
@@ -49,6 +49,9 @@ export default function Header() {
         <Link to="/signup">
           <button className={styles.btn}>Sign Up</button>
         </Link>
+        <Link to="/user">
+          <button className={styles.iconbutton}>User</button>
+         </Link>
       </div>
     </header>
   );
