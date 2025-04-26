@@ -2,6 +2,10 @@ import styles from "./header.module.css";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  console.log(user)
+  const admin = (user.isAdmin)
+  console.log(admin)
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
@@ -29,6 +33,7 @@ export default function Header() {
           <a href="#">Our Services</a>
           <Link to="/blog">Blog</Link>
           <a href="#">Contact Us</a>
+          {admin && <Link to="/admin">Admin</Link> }
         </div>
       </nav>
 

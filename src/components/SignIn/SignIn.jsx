@@ -1,83 +1,105 @@
-import React from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-function SignIn() {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema: Yup.object({
-      email: Yup.string().email("Invalid email address").required("Email is required"),
-      password: Yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
-    }),
-    onSubmit: (values) => {
-      console.log(values);
-    },
+const SignIn = () => {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
   });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(''); // Clear any previous errors
+    try {
+      const response = await axios.post('http://localhost:5000/api/auth/signin', formData);
+      
+      // Store user data and token
+      localStorage.setItem('user', JSON.stringify(response.data.user));
+      localStorage.setItem('token', response.data.token);
+
+      if (response.data.user.isAdmin) {
+        // Redirect admin users to the admin dashboard
+        navigate('/admin/dashboard');
+      } else {
+        // Redirect regular users to the home page
+        navigate('/');
+      }
+    } catch (err) {
+      // Show the specific error message from the server
+      setError(err.response?.data?.message || 'An error occurred during sign in');
+      console.error('Sign in error:', err.response?.data || err);
+    }
+  };
 
   return (
-    <div className="min-h-screen py-10 flex items-center justify-center px-4">
-    <div className="bg-white p-8 md:p-14 rounded-2xl w-full max-w-2xl shadow-lg">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Sign In</h2>
-      <p className="text-gray-500 mb-10 text-center">Please enter your login details below.</p>
-  
-      <form onSubmit={formik.handleSubmit} className="space-y-7">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-            Email Address
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="you@example.com"
-            {...formik.getFieldProps("email")}
-            className="w-full px-4 py-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-          {formik.touched.email && formik.errors.email && (
-            <div className="text-sm text-red-500 mt-1">{formik.errors.email}</div>
-          )}
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Sign in to your account
+          </h2>
         </div>
-  
-        <div>
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-            Password
-          </label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="••••••••"
-            {...formik.getFieldProps("password")}
-            className="w-full px-4 py-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-          {formik.touched.password && formik.errors.password && (
-            <div className="text-sm text-red-500 mt-1">{formik.errors.password}</div>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          {error && (
+            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <span className="block sm:inline">{error}</span>
+            </div>
           )}
-        </div>
-  
-        <button
-          type="submit"
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-4 rounded-lg font-medium transition duration-150 ease-in-out shadow-md"
-        >
-          Sign In
-        </button>
-      </form>
-  
-      <div className="text-center mt-8">
-        <p className="text-sm text-gray-600">
-          Don't have an account?{" "}
-          <a href="#" className="text-indigo-600 font-medium hover:text-indigo-500">
-            Register
-          </a>
-        </p>
+          <div className="rounded-md shadow-sm -space-y-px">
+            <div>
+              <label htmlFor="email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Email address"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="sr-only">
+                Password
+              </label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Sign in
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  </div>
-  
   );
-}
+};
 
 export default SignIn;
