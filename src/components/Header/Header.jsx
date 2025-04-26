@@ -10,15 +10,18 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.logo}>
         <Link to="/">
+          <span>M</span>
+          <span>I</span>
+          <span>N</span>
+          <span>D</span>
+          <span>B</span>
+          <span>L</span>
+          <span>O</span>
+          <span>O</span>
+          <span>M</span>
+          <span>E</span>
+          <span>R</span>
           <span>S</span>
-          <span>m</span>
-          <span>a</span>
-          <span>r</span>
-          <span>t</span>
-          <span>S</span>
-          <span>t</span>
-          <span>e</span>
-          <span>p</span>
         </Link>
       </div>
 
@@ -29,8 +32,8 @@ export default function Header() {
 
         <div className={styles.tgs}>
           {/* Replace these with real <Link>s when routing is ready */}
-          <a href="#">Pages</a>
-          <a href="#">Our Services</a>
+          <Link to="/learning">Learning</Link>
+          <Link to="#">Services</Link>
           <Link to="/blog">Blog</Link>
           {admin && <Link to="/admin">Admin</Link> }
         </div>
