@@ -13,10 +13,10 @@ import BlogSection from "./pages/blog/BlogSection";
 import VoiceInput from "./components/VoiceInput";
 import { VoiceProvider } from "./context/voiceContext";
 import LearningPage from "./pages/LearningPage/LearningPage";
-import Catagories from "./pages/LearningPage/Catagories";
 // import ImageAi from "./pages/imageGeneration/ImageAi";
 
 function App() {
+  
   return (
     <>
       <VoiceProvider>
@@ -24,14 +24,12 @@ function App() {
           <Header />
           {/* <VoiceInput />
           <LearningPage /> */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/blog" element={<BlogSection />} />
-            <Route path="/learning" element={<Catagories />} />
-            <Route path="/learningPage/:title" element={<LearningPage />} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/blog" element={<BlogSection />} />
+        </Routes>
           <Footer />
         </Router>
       </VoiceProvider>

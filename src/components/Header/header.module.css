@@ -11,6 +11,7 @@
 .logo a {
   text-decoration: none;
   font-size: 25px;
+  
 }
 .logo span:nth-child(1),
 .logo span:nth-child(9) {
@@ -54,7 +55,7 @@ nav a {
   margin: 0 20px;
   text-decoration: none;
   color: #2d2c57;
-  font-size: 16px;
+  font-size: 20px;
 }
 .tgs a {
   padding: 8px 20px;
