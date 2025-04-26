@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -12,6 +13,7 @@ import BlogSection from "./pages/blog/BlogSection";
 import VoiceInput from "./components/VoiceInput";
 import { VoiceProvider } from "./context/voiceContext";
 import LearningPage from "./pages/LearningPage/LearningPage";
+import Catagories from "./pages/LearningPage/Catagories";
 // import ImageAi from "./pages/imageGeneration/ImageAi";
 
 function App() {
@@ -22,12 +24,14 @@ function App() {
           <Header />
           {/* <VoiceInput />
           <LearningPage /> */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/blog" element={<BlogSection />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/blog" element={<BlogSection />} />
+            <Route path="/learning" element={<Catagories />} />
+            <Route path="/learningPage/:title" element={<LearningPage />} />
+          </Routes>
           <Footer />
         </Router>
       </VoiceProvider>

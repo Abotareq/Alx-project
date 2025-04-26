@@ -17,7 +17,7 @@ export default function TrainersSlider({
       slidesPerView={slidesPerView}
       spaceBetween={30}
       freeMode
-      navigation // ← turn on built‑in arrows
+      ///navigation // ← turn on built‑in arrows
       pagination={{ clickable: true }}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
       className="mySwiper"

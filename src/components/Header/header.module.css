@@ -12,7 +12,8 @@
   text-decoration: none;
   font-size: 25px;
 }
-.logo a span:nth-child(1) {
+.logo span:nth-child(1),
+.logo span:nth-child(9) {
   color: #4ad0f8;
 }
 .logo a span:nth-child(2) {
@@ -30,15 +31,21 @@
 .logo a span:nth-child(6) {
   color: #4ad0f8;
 }
-.logo a span:nth-child(7) {
+.logo a span:nth-child(7),
+.logo a span:nth-child(8) {
   color: #fdd36e;
 }
-.logo a span:nth-child(8) {
+.logo a span:nth-child(10) {
   color: #fd6e94;
 }
-.logo a span:nth-child(9) {
+.logo a span:nth-child(11) {
   color: #4a7cf8;
 }
+.logo a span:nth-child(12) {
+  color: #4ad0f8;
+}
+
+
 .nav {
   display: flex;
   align-items: center;
