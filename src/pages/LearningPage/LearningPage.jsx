@@ -15,7 +15,7 @@ export default function LearningPage() {
     main();
   };
   const ai = new GoogleGenAI({
-    apiKey: "AIzaSyDoKPvvZTzORNW3iH7ie5YwZrsgkfX8yuE",
+    apiKey: import.meta.env.VITE_API_KEY_GOOGLE,
   });
 
   async function main() {
@@ -30,13 +30,6 @@ export default function LearningPage() {
   return (
     <div className="max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg space-y-4">
       <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Type something..."
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
