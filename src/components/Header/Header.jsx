@@ -32,7 +32,6 @@ export default function Header() {
           <a href="#">Pages</a>
           <a href="#">Our Services</a>
           <Link to="/blog">Blog</Link>
-          <a href="#">Contact Us</a>
           {admin && <Link to="/admin">Admin</Link> }
         </div>
       </nav>
