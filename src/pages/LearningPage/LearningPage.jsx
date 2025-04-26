@@ -33,7 +33,7 @@ export default function LearningPage() {
 
     return response.data.resources; // array of media objects
   }; */
-/*   const getAllMedia = async () => {
+  /*   const getAllMedia = async () => {
     const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
     const username = import.meta.env.VITE_CLOUDINARY_USER_NAME;
     const password = import.meta.env.VITE_CLOUDINARY_PASSWORD;
